@@ -7,7 +7,7 @@ This file contains the implementation of elevated ducts refinement in PyTorch.We
 
 The `DLCNN` derives from nn.Module so it can be used as any other PyTorch module.
 
-Training.py is training code.Testing.py is testting code. 202001nc.nc and EDH_data.nc are elvated duct dataset, and "tplt" and “tplb” represent elevated duct top height and bottom height respectively. Please use Training.py to train a model first and test it by Testing.py.
+Training.py is training code.Testing.py is testting code. 202001nc.nc and EDH_data.nc are elevated duct dataset, and "tplt" and “tplb” represent top height and bottom height of elevated duct's trapped layer respectively. Please use Training.py to train a model first and test it by Testing.py.
 
 Dataset is custom dataset code, and MODEL contain several refinement model. 
 
@@ -44,9 +44,6 @@ Training(model_type=0, model_structure=[128, 5, 3, 3, 3, 3, 3, 3], batch_size=12
 
 Testing(model_type=0, model_structure=[128, 5, 3, 3, 3, 3, 5, 3], model_path1=" ", model_path2=" ")
 
-
-
-<!-- ![image](https://github.com/zxy1012-maker/Evaporation-Ducts-Refinement/blob/master/gitimg.png) -->
 
 
 
