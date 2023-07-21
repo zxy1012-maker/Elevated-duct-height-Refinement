@@ -22,6 +22,16 @@ def Tozero(data):
                 if data[k, i, j] < 0:
                     data[k, i, j] = 0
     return data
+def alignment(data1, data2):
+    n = data1.shape[0]
+    size1 = data1.shape[1]
+    size2 = data1.shape[2]
+    for k in range(n):
+        for i in range(size1):
+            for j in range(size2):
+                if data2[k, i, j] == 0 and data1[k, i, j] > 0:
+                    data1[k, i, j] = 0
+    return data1
 
 def RegulationCheck1(pred, HR):
     size1 = pred.shape[0]
@@ -135,6 +145,8 @@ def testing(testing_type, model_structure, model_path1, model_path2="MyModelwith
 
     Base_Height = Tozero(Base_Height)
     Top_Height = Tozero(Top_Height)
+
+    Top_height = alignment(Top_Height, Base_Height)
 
     Base_Height_test = np.zeros(shape=(124, 41, 41))
     Top_Height_test = np.zeros(shape=(124, 41, 41))
